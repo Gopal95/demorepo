@@ -7,9 +7,9 @@ resources:
     check_every: 24h
     webhook_token: ((github-enterprise.webhook-token))
     source:
-      uri: https://github.com/Gopal95/demorepo.git
+      uri: https://github.com/Gopal95/demorepo
       username: Gopal95
-      password: ((github-enterprise.access-token))
+      password: 0167e00f02bd24bbe62f6ba1d4a52be99d09cb8e
       branch: master
 
 jobs:
