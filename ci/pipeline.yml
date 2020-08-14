@@ -1,0 +1,23 @@
+resource_types:
+
+resources:
+
+  - name: appcode
+    type: git
+    check_every: 24h
+    webhook_token: ((github-enterprise.webhook-token))
+    source:
+      uri: https://github.com/Gopal95/demorepo.git
+      username: Gopal95
+      password: ((github-enterprise.access-token))
+      branch: master
+
+jobs:
+
+  - name: build-and-publish-master
+    serial: true
+    plan:
+      - get: appcode
+        trigger: true
+      - task: build
+        file: appcode/ci/tasks/build.yml

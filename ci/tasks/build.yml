@@ -1,0 +1,16 @@
+platform: linux
+
+image_resource:
+  type: registry-image
+  source:
+    repository: maven
+    tag: 3.6-jdk-8-alpine
+
+inputs:
+- name: appcode
+
+outputs:
+- name: build
+
+run:
+  path: appcode/ci/tasks/build.sh
